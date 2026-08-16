@@ -21,4 +21,12 @@ public class Biblioteca {
             System.out.println(livro);
         }
     }
+
+    public void listarLivro(int id){
+        for(Livro livro : livros){
+            if(livro.getId() == id){
+                System.out.println(livro);
+            }
+        }
+    }
 }
