@@ -4,16 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Biblioteca {
+public class Biblioteca implements OperacoesBiblioteca{
     List<Livro> livros = new ArrayList<>();
-    private int id = 1;
+    int id = 1;
 
-    public void cadastrarLivro(String titulo, String autor){
-        Livro livro = new Livro(id, titulo, autor, true);
-        livros.add(livro);
-
-        id++;
+    @Override
+    public void cadastrar(String name, String autor){
+        livros.add(new Livro(id, name, autor, true));
+        id += 1;
     }
+
+//    public void cadastrarLivro(String titulo, String autor){
+//        Livro livro = new Livro(id, titulo, autor, true);
+//        livros.add(livro);
+//
+//        id++;
+//    }
 
 
     public void listarLivros(){

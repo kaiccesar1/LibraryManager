@@ -34,7 +34,7 @@ public class Program {
                         System.out.print("Autor: ");
                         String autor = sc.nextLine();
 
-                        biblioteca.cadastrarLivro(titulo, autor);
+                        biblioteca.cadastrar(titulo, autor);
                         break;
                     case 2:
                         biblioteca.listarLivros();
