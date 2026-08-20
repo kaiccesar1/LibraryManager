@@ -5,11 +5,14 @@ import java.util.Scanner;
 
 import entities.Biblioteca;
 import entities.Livro;
+import entities.Usuario;
+import entities.UsuarioService;
 
 public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Biblioteca biblioteca = new Biblioteca();
+        UsuarioService usuarioService = new UsuarioService();
 
         int opcao = 1;
 
@@ -21,6 +24,8 @@ public class Program {
                 System.out.println("1 - Cadastrar livro");
                 System.out.println("2 - Lista livros");
                 System.out.println("3 - Buscar livro");
+                System.out.println("4 - Cadastrar usuário");
+                System.out.println("5 - Listar usuários");
                 System.out.println("0 - Sair");
 
                 System.out.print("Escolha uma opção: ");
@@ -45,6 +50,21 @@ public class Program {
                         sc.nextLine();
 
                         biblioteca.listarLivro(id);
+                        break;
+                    case 4:
+                        System.out.print("Nome: ");
+                        String nome = sc.nextLine();
+
+                        System.out.print("CPF: ");
+                        String cpf = sc.nextLine();
+
+                        System.out.print("E-mail: ");
+                        String email = sc.nextLine();
+
+                        usuarioService.cadastrarUsuario(new Usuario(1, nome, cpf, email));
+                        break;
+                    case 5:
+                        usuarioService.listarUsuarios();
                         break;
                 }
             }
