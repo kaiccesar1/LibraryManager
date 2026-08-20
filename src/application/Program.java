@@ -3,19 +3,17 @@ package application;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import entities.Biblioteca;
-import entities.Livro;
-import entities.Usuario;
-import entities.UsuarioService;
+import service.BibliotecaService;
+import model.Usuario;
+import service.UsuarioService;
 
 public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Biblioteca biblioteca = new Biblioteca();
+        BibliotecaService biblioteca = new BibliotecaService();
         UsuarioService usuarioService = new UsuarioService();
 
         int opcao = 1;
-
 
         try {
             while(opcao != 0) {
@@ -49,7 +47,7 @@ public class Program {
                         int id = sc.nextInt();
                         sc.nextLine();
 
-                        biblioteca.listarLivro(id);
+                        biblioteca.listarLivroId(id);
                         break;
                     case 4:
                         System.out.print("Nome: ");

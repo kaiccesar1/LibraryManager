@@ -1,4 +1,4 @@
-package entities;
+package model;
 
 public class Livro {
     private int id;
